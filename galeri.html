@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeri - Kecamatan Karanganom</title>
+
+    <link rel="shortcut icon" href="assets/logo.png" type="image/png">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #004d40;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .header-left img {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+            border-radius: 5px;
+        }
+
+        .header-left h2 {
+            margin: 0;
+            font-size: 20px;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .content {
+            padding: 40px 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+            flex: 1;
+        }
+
+        h1 {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .galeri-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .galeri-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .galeri-item img:hover {
+            transform: scale(1.03);
+        }
+
+        #modalGaleri {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            align-items: center;
+            justify-content: center;
+        }
+
+        #imgModal {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 8px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #004d40;
+            color: white;
+            margin-top: 40px;
+        }
+
+        /* --- Tambahan untuk Perbaikan Tampilan HP --- */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+
+            nav {
+                justify-content: center;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="header-left">
+            <img src="assets/logo.png" alt="Logo">
+            <h2>Kecamatan Karanganom</h2>
+        </div>
+        <nav>
+            <a href="index.html">Beranda</a>
+            <a href="profil.html">Profil</a>
+            <a href="kegiatan.html">Kegiatan</a>
+            <a href="download.html">Layanan</a>
+            <a href="galeri.html">Galeri</a>
+        </nav>
+    </header>
+
+    <div class="content">
+        <h1>Galeri Foto</h1>
+        <div class="galeri-grid">
+            <div class="galeri-item"><img src="assets/GOTONG G.jpg" onclick="bukaModal(this.src)"></div>
+            <div class="galeri-item"><img src="assets/MASAK G.jpg" onclick="bukaModal(this.src)"></div>
+            <div class="galeri-item"><img src="assets/masjid g.jpg" onclick="bukaModal(this.src)"></div>
+            <div class="galeri-item"><img src="assets/kupat 2.jpeg" onclick="bukaModal(this.src)"></div>
+        </div>
+    </div>
+
+    <div id="modalGaleri" onclick="tutupModal()"><img id="imgModal"></div>
+
+    <footer>
+        <p>&copy; 2026 Kecamatan Karanganom. Seluruh hak cipta dilindungi.</p>
+    </footer>
+
+    <script>
+        function bukaModal(src) { document.getElementById('modalGaleri').style.display = 'flex'; document.getElementById('imgModal').src = src; }
+        function tutupModal() { document.getElementById('modalGaleri').style.display = 'none'; }
+    </script>
+</body>
+
+</html>
