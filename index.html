@@ -1,59 +1,31 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kecamatan Karanganom</title>
     <link rel="icon" href="assets/logo.png" type="image/png">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=2.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-        /* CSS RESPONSIF UNTUK HP - DITAMBAHKAN DI SINI */
+        /* CSS untuk memastikan Logo & Teks tetap SEJAJAR di HP */
         @media screen and (max-width: 768px) {
-            .container {
-                width: 95% !important;
-                padding: 0 10px !important;
-            }
-
-            .navbar {
-                flex-direction: column !important;
-                text-align: center !important;
-                gap: 15px !important;
-            }
-
-            .navbar nav {
-                display: flex !important;
-                flex-wrap: wrap !important;
-                justify-content: center !important;
+            .navbar { flex-direction: column !important; }
+            
+            .logo { 
+                display: flex !important; 
+                flex-direction: row !important; /* KUNCI: Membuat logo & teks sejajar */
+                justify-content: flex-start !important; /* KUNCI: Tetap di kiri */
+                align-items: center !important; 
+                width: 100% !important; 
                 gap: 10px !important;
+                margin-bottom: 10px !important;
             }
 
-            .stats-container {
-                display: grid !important;
-                grid-template-columns: repeat(2, 1fr) !important;
-                gap: 10px !important;
-                margin-top: -20px !important;
-            }
-
-            .card-stat {
-                width: 100% !important;
-                padding: 15px 5px !important;
-            }
-
-            h1 {
-                font-size: 1.6rem !important;
-            }
-
-            h2 {
-                font-size: 1.4rem !important;
-                text-align: center;
-            }
-
-            .hero-text {
-                padding: 10px !important;
-            }
+            .logo h2 { font-size: 16px !important; margin: 0 !important; }
+            
+            nav { justify-content: center !important; gap: 10px !important; width: 100% !important; }
         }
     </style>
 </head>
@@ -62,7 +34,7 @@
     <header>
         <div class="container navbar">
             <div class="logo">
-                <img src="assets/logo.png" alt="Logo Kelurahan">
+                <img src="assets/logo.png" alt="Logo Kelurahan" style="width: 50px; height: 50px;">
                 <h2>Kecamatan Karanganom</h2>
             </div>
             <nav>
@@ -86,70 +58,8 @@
     </section>
 
     <main class="container">
-        <section class="welcome-banner" style="text-align: center; padding: 40px 0;">
-            <h2 style="font-size: 2.5rem; color: #004d40;">Informasi Terkini</h2>
-            <div style="width: 80px; height: 4px; background: #e67e22; margin: 15px auto; border-radius: 2px;"></div>
-        </section>
-
-        <section class="stats-container">
-            <div class="card-stat">
-                <i class="fas fa-users" style="font-size: 2rem; color: #004d40; margin-bottom: 10px;"></i>
-                <h3>4.156</h3>
-                <p>Jumlah Penduduk</p>
-            </div>
-            <div class="card-stat">
-                <i class="fas fa-home" style="font-size: 2rem; color: #004d40; margin-bottom: 10px;"></i>
-                <h3>15</h3>
-                <p>RT</p>
-            </div>
-            <div class="card-stat">
-                <i class="fas fa-map-marked-alt" style="font-size: 2rem; color: #004d40; margin-bottom: 10px;"></i>
-                <h3>005</h3>
-                <p>RW</p>
-            </div>
-            <div class="card-stat">
-                <i class="fas fa-store" style="font-size: 2rem; color: #004d40; margin-bottom: 10px;"></i>
-                <h3>88</h3>
-                <p>UMKM</p>
-            </div>
-        </section>
-
-        <section class="card-large">
-            <h2>Selamat Datang di Kecamatan Karanganom</h2>
-            <p>Selamat datang di Website Resmi Kecamatan Karanganom. Kami berkomitmen memberikan pelayanan yang cepat,
-                transparan, dan mudah diakses untuk seluruh warga Karanganom.</p>
-        </section>
-
-        <section class="card-large visi-misi-section">
-            <div class="center-content">
-                <h2>Visi</h2>
-                <p class="visi-text">"Mewujudkan Kecamatan Karanganom yang maju, sejahtera, berbudaya, dan berdaya
-                    saing."</p>
-
-                <h2>Misi</h2>
-                <ul class="misi-list" style="list-style: none; padding: 0;">
-                    <li><i class="fas fa-check-circle" style="color: #e67e22; margin-right: 10px;"></i> Meningkatkan
-                        kualitas pelayanan kepada masyarakat.</li>
-                    <li><i class="fas fa-check-circle" style="color: #e67e22; margin-right: 10px;"></i> Mendorong
-                        pembangunan yang berkelanjutan.</li>
-                    <li><i class="fas fa-check-circle" style="color: #e67e22; margin-right: 10px;"></i> Mengembangkan
-                        potensi ekonomi dan UMKM lokal.</li>
-                    <li><i class="fas fa-check-circle" style="color: #e67e22; margin-right: 10px;"></i> Melestarikan
-                        budaya dan kearifan lokal.</li>
-                    <li><i class="fas fa-check-circle" style="color: #e67e22; margin-right: 10px;"></i> Meningkatkan
-                        partisipasi masyarakat dalam pembangunan.</li>
-                </ul>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 Kecamatan Karanganom. Seluruh hak cipta dilindungi.</p>
-        </div>
-    </footer>
+        </main>
 
     <script src="script.js"></script>
 </body>
-
 </html>
