@@ -17,12 +17,12 @@ img {
     display: block;
 }
 
-/* --- 2. HEADER --- */
+/* --- 2. HEADER (DIPERBAIKI: Menjadi Relative agar tidak sticky) --- */
 header {
     background-color: #004d40 !important;
     padding: 15px 0;
-    position: sticky;
-    top: 0;
+    position: relative;
+    /* Diubah dari sticky ke relative */
     z-index: 9999;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
@@ -47,15 +47,12 @@ header {
     height: 50px !important;
     object-fit: contain;
     border-radius: 5px;
-    display: block !important;
 }
 
 .logo h2 {
     color: #ffffff;
     font-size: 20px;
-    letter-spacing: 0.5px;
     margin: 0;
-    line-height: 50px;
 }
 
 nav {
@@ -158,14 +155,13 @@ nav a:hover {
     text-transform: uppercase;
 }
 
-/* --- 5. FOTO KEGIATAN & CONTENT --- */
+/* --- 5. CONTENT --- */
 .kegiatan-item img,
 .card-large img {
     width: 100% !important;
     height: 200px !important;
     object-fit: cover;
     border-radius: 10px;
-    display: block;
 }
 
 main {
@@ -196,39 +192,42 @@ footer {
     margin-top: 50px;
 }
 
-/* --- 6. RESPONSIVE (DIPERBAIKI) --- */
-@media (max-width: 768px) {
+/* --- 6. RESPONSIVE --- */
+@media screen and (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .container {
+        width: 95% !important;
+        padding: 0 10px !important;
+    }
+
     .navbar {
         flex-direction: column !important;
+        text-align: center !important;
         gap: 15px !important;
-        padding: 15px !important;
+    }
+
+    .navbar nav {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 10px !important;
+        width: 100%;
     }
 
     .logo {
         flex-direction: column !important;
         gap: 5px !important;
-        text-align: center;
-    }
-
-    nav {
-        display: flex !important;
-        flex-wrap: wrap !important;
-        justify-content: center !important;
-        gap: 8px 12px !important;
-        width: 100%;
-    }
-
-    nav a {
-        margin-left: 0 !important;
-        font-size: 13px !important;
     }
 
     .stats-container {
         display: grid !important;
-        grid-template-columns: 1fr 1fr !important;
+        grid-template-columns: repeat(2, 1fr) !important;
         gap: 10px !important;
+        margin-top: -20px !important;
         padding: 10px !important;
-        margin-top: -30px !important;
     }
 
     .card-stat {
@@ -236,12 +235,12 @@ footer {
         padding: 15px 5px !important;
     }
 
+    h1 {
+        font-size: 1.6rem !important;
+    }
+
     h2 {
         font-size: 1.4rem !important;
         text-align: center;
-    }
-
-    .hero-text h1 {
-        font-size: 1.8rem !important;
     }
 }
